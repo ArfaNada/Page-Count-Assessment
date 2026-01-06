@@ -97,43 +97,6 @@ python -m unittest test_page_count.py
 # Or with pytest
 pytest -v
 ```
-
----
-
-### **TypeScript**
-
-```bash
-cd typescript
-npm install
-# Compile TypeScript to check for errors
-npx tsc --noEmit
-# Run tests
-npm test
-```
-
----
-
-### **Java (Maven)**
-
-```bash
-cd java
-mvn clean test
-```
-
-*If Maven is not installed, see [https://maven.apache.org/download.cgi](https://maven.apache.org/download.cgi).*
-
----
-
-### **C# (.NET)**
-
-```bash
-cd csharp
-dotnet restore
-dotnet test
-```
-
-*Ensure your machine has .NET 8 installed, or update the project target in `PageCount.csproj`.*
-
 ---
 
 ## Submission Instructions
