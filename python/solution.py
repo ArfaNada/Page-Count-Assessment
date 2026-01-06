@@ -15,8 +15,22 @@ def pageCount(n: int, p: int) -> int:
     Returns:
         int: Minimum number of page turns required
     """
-    # TODO: Implement the logic
-    pass
+    # Calculate turns from the front (page 1)
+    # Each turn reveals 2 pages, so divide by 2
+    turns_from_front = p // 2
+    
+    # Calculate turns from the back
+    # Total possible turns from front is n // 2
+    # Subtract the target page position from that
+    turns_from_back = n // 2 - p // 2
+    
+    # Special case: when n is divisible by 4 and p is n-1,
+    # both pages n-1 and n are visible from the back opening
+    if n % 4 == 0 and p == n - 1:
+        turns_from_back = 0
+    
+    # Return the minimum of the two approaches
+    return min(turns_from_front, turns_from_back)
 
 
 def pageCountMultiple(n: int, targets: list[int]) -> list[int]:
@@ -31,5 +45,5 @@ def pageCountMultiple(n: int, targets: list[int]) -> list[int]:
     Returns:
         list[int]: List of minimum page turns for each target page
     """
-    # TODO: Implement the logic
-    pass
+    # Apply pageCount to each target page
+    return [pageCount(n, p) for p in targets]
